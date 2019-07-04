@@ -19,7 +19,7 @@ public class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertTrue("brie is a higher quality",app.items[0].quality>1 );
-        
+
     }
     @Test
     public void never_over_50() {
@@ -27,6 +27,15 @@ public class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertTrue("brie is higher quality than it should be able to",app.items[0].quality==50 );
-        
+
+    }
+    @Test
+    public void conjured() {
+        Item[] items = new Item[] { new Item("Conjured", 10, 10), new Item("foo", 10, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        normalQualityD = 10 - items[1].quality;
+        conjuredQualityD = 10 - items[0].quality;
+        assertEquals("Conjured should lose twice the quality than a normal item", conjuredQualityD, normalQualityD * 2)        
     }
 }
