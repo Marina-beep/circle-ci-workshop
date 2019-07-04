@@ -36,6 +36,6 @@ public class GildedRoseTest {
         app.updateQuality();
         int normalQualityD = 10 - items[1].quality;
         int conjuredQualityD = 10 - items[0].quality;
-        assertEquals("Conjured should lose twice the quality than a normal item", conjuredQualityD, normalQualityD * 2)
+        assertEquals("Conjured should lose twice the quality than a normal item", conjuredQualityD, normalQualityD * 2);
     }
 }
