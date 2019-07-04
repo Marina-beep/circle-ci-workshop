@@ -11,8 +11,8 @@ jobs:
      - store_test_results:
           path: build/test-results
      - run:
-         name:Grad
-         command: gradle jar
+         name: Grad
+         command: 'gradle jar'
      - store_artifacts:
          path: /code/test-results
          destination: prefix
